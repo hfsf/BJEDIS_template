@@ -1,0 +1,104 @@
+\documentclass[12pt, english, brazilian]{bjedis}
+
+\usepackage{lipsum} %For generation of dummy text
+
+\begin{document}
+
+%Use english as the default language for article
+\selectlanguage{english}
+
+%Identify pretextual section
+\pretextual
+
+%Required fields for printing title page
+\Title{BJEDIS article template for \LaTeX}
+\Volume{1}
+\Year{2021}
+\DOI{xx.xxxx/xxxxxxxxxxxxx}
+\EISSN{xxxx-xxxx/xx}
+\Affiliations{$^{1}$ Department Name, Faculty Name, University Name, City, Country; $^{2}$ Department Name, Faculty Name, University Name, City, Country; $^3$ Department Name, Faculty Name, University Name, City, Country;}
+\Author{First Author$^{1}$, Corresponding Author$^{*1}$, Co-author$^{1,2}$ and Co-author$^{3}$}
+\CorrespondingAddress{*Address correspondence to this author at the Department of xxxy, Faculty of xxx, xxx University, P.O. Box: 0000-000, City, Country; Tel/Fax: ++0-000-000-0000, +0-000-000-0000; E-mails: author@institute.xxx}
+\Adherence{Text explaining the adherence to BJEDIS' scope.}
+\AbstractText{Insert the abstract text here.}
+\Keywords{Provide 6 to 8 keywords, separated by semicolons.}
+\Code{xxxxxxxxxx}
+\ShortTitle{Insert a short title for headers}
+\ShortAuthor{First author et al.}
+
+%Print title page using information provided
+\PrintTitlePage
+
+%Identify textual part
+\textual
+
+\section{Introduction}
+%Replace your text
+\lipsum[2-8]
+
+\section{Methodology}
+\lipsum[5-7]
+
+\subsection{Subsection of Methodology}
+\lipsum[8]
+
+\subsubsection{Subsubsection of Methodology}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[scale=.8]{bjedis_logo.png}
+    \caption{Example of figure.}
+    \label{fig:example}
+\end{figure}
+
+\begin{table}[htpb]
+    \centering
+    \caption{Example of table.}
+    \begin{tabular}{c c c}
+    \toprule
+    \textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3} \\
+    \midrule
+    Aaaa & Bbbb & Cccc \\
+    Aaaa & Bbbb & Cccc \\
+    Aaaa & Bbbb & Cccc \\
+    \bottomrule
+    \end{tabular}
+    \label{tab:example}
+\end{table}
+
+\lipsum[9]
+
+We will cite \cite{lamport1994latex} from the references as an example of \textsc{Bib}\TeX usage. The equation example is outlined below.
+
+\begin{equation}
+    E = m c^2
+    \label{eq:example1}
+\end{equation}
+
+\begin{equation}
+    \Delta = b^2 - 4 a c
+    \label{eq:example2}
+\end{equation}
+
+\section{Results}
+\lipsum[10-11]
+
+\section{Conclusions}
+\lipsum[12-13]
+
+\section{Conflict of interests}
+Describe eventual conflict of interests.
+
+%Important to identify postextual sections (References) 
+\postextual
+
+%Insert the name of your BIB file.
+%When compiling execute the following recipe for proper reference processing (BibTex requirements):
+% PDFLATEX -> BIBTEX -> PDFLATEX -> PDFLATEX 
+%Use \cite command for citation (using abntex2cite)
+
+\section{References}
+
+\bibliography{references_template.bib}
+
+\end{document}
